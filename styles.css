@@ -1,0 +1,207 @@
+:root {
+    --bg-gradient-start: #f8faff;
+    --bg-gradient-end: #e8eeff;
+    --container-bg: rgba(255, 255, 255, 0.98);
+    --text-color: #2d3748;
+    --heading-color: #1a202c;
+    --timer-color: #1a202c;
+    --progress-ring-bg: #e2e8f0;
+    --progress-ring-fill: #3b82f6;
+    --start-button-bg: #3b82f6;
+    --start-button-hover: #2563eb;
+    --reset-button-bg: #EDF2F7;
+    --reset-button-text: #2D3748;
+    --reset-button-hover: #E2E8F0;
+    --mode-text-color: #4A5568;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    --bg-gradient-start: #1a202c;
+    --bg-gradient-end: #2d3748;
+    --container-bg: rgba(26, 32, 44, 0.98);
+    --text-color: #e2e8f0;
+    --heading-color: #f7fafc;
+    --timer-color: #f7fafc;
+    --progress-ring-bg: #4A5568;
+    --progress-ring-fill: #3b82f6;
+    --start-button-bg: #3b82f6;
+    --start-button-hover: #2563eb;
+    --reset-button-bg: #2D3748;
+    --reset-button-text: #e2e8f0;
+    --reset-button-hover: #4A5568;
+    --mode-text-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Modern Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: var(--container-bg);
+    padding: 3rem;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px var(--shadow-color);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+.timer {
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--timer-color);
+    text-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+button {
+    border: none;
+    padding: 1.125rem;
+    border-radius: 16px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#start {
+    background: var(--start-button-bg);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+#start:hover {
+    background: var(--start-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+#reset {
+    background: var(--reset-button-bg);
+    color: var(--reset-button-text);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+#reset:hover {
+    background: var(--reset-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.mode {
+    text-align: center;
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#mode-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--mode-text-color);
+    margin-bottom: 0.5rem;
+}
+
+#mode-toggle {
+    background: var(--reset-button-bg);
+    color: var(--reset-button-text);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    margin-bottom: 1rem;
+}
+
+#mode-toggle:hover {
+    background: var(--reset-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.theme-toggle {
+    width: 100%;
+    background: var(--reset-button-bg);
+    color: var(--mode-text-color);
+    padding: 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+    background: var(--reset-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: var(--reset-button-bg);
+    color: var(--reset-button-text);
+}
+
+/* Progress indicator */
+.progress-ring {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    margin: 0;
+    color: var(--timer-color);
+}
+
+.progress-ring-circle {
+    stroke: var(--progress-ring-bg);
+    stroke-width: 8;
+}
+
+.progress-ring-circle-fill {
+    stroke: var(--progress-ring-fill);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}

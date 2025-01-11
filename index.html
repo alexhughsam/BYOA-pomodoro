@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25:00 - Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Focus Timer</h1>
+        <div class="progress-ring">
+            <svg class="progress" width="300" height="300">
+                <circle class="progress-ring-circle" cx="150" cy="150" r="140" 
+                        stroke="var(--progress-ring-bg)" stroke-width="10" fill="none"/>
+                <circle class="progress-ring-circle-fill" cx="150" cy="150" r="140"
+                        stroke="var(--progress-ring-fill)" stroke-width="10" fill="none"/>
+            </svg>
+            <div class="timer">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start">Start Focus</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div class="mode">
+            <span id="mode-text">Focus Time</span>
+            <button id="mode-toggle" class="work">Take a Break</button> 
+            <button id="theme-toggle" class="theme-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
