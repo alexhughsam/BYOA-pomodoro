@@ -241,11 +241,15 @@ button {
 
 @media (max-width: 480px) {
     .progress-ring {
-        width: 260px;
-        height: 260px;
+        width: 240px;
+        height: 240px;
     }
     
     .timer {
-        font-size: 3.75rem;
+        font-size: 3.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
     }
 }
