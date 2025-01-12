@@ -202,6 +202,7 @@ button {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
+    overflow: visible;
 }
 
 .progress-ring-circle, .progress-ring-circle-fill {
@@ -235,5 +236,16 @@ button {
     
     h1 {
         margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-ring {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .timer {
+        font-size: 3.75rem;
     }
 }
